@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Leekie Enterprises Inc</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+        <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    </head>
+    
+<body>
+    <header>
+        <div class="title-container">
+            <img src="https://static.wikia.nocookie.net/onepiece/images/f/fe/Luffy_Naked_at_Amazon_Lilly.png/revision/latest/scale-to-width-down/1000?cb=20130330193251" alt="Luffy" class="luffy-image">
+            <h1>Leekie Enterprises Inc</h1>
+        </div>
+    </header>
+    
+    <nav>
+        <ul>
+            <li onclick="showTab('library')">GOCO Library</li>
+            <li onclick="showTab('calculator')">GOCO Calculator</li>
+            <li onclick="showTab('ipLookup')">IP Lookup</li>
+            <li onclick="showTab('conversion')">Currency Conversion</li> <!-- New tab -->
+
+        </ul>
+    </nav>
+    <main>
+        <div id="library" class="tab">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Link</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Admete</td><td><a href="http://admete-admin-a01.royalcasino.sbobet.com:8088/web-root/restricted/default.aspx" target="_blank">Click here!</a></td></tr>
+                    <tr><td>Leo</td><td><a href="http://leo-a01.sbobet.com:8088/" target="_blank">Click here!</a></td></tr>
+                    <tr><td>CDLM</td><td><a href="http://cdlm.leekie.com/" target="_blank">Click here!</a></td></tr>
+                    <tr><td>Onyx Admin Site</td><td><a href="https://admin.338a.com/login" target="_blank">Click here!</a></td></tr>
+                    <tr><td>Zircon Admin Site</td><td><a href="https://admin.sboclassic.com" target="_blank">Click here!</a></td></tr>
+                    <tr><td>Jasper Admin Site</td><td><a href="https://jasper.s628c.com/" target="_blank">Click here!</a></td></tr>
+                    <tr><td>Redmine Ticket</td><td><a href="https://redmine.leekie.com/" target="_blank">Click here!</a></td></tr>
+                    <tr><td>CSR Table Limit</td><td><a href="http://lcm01.leekie.com/login" target="_blank">Click here!</a></td></tr>
+                    <tr><td>New Insider I</td><td><a href="http://insiderinew.leekie.com/" target="_blank">Click here!</a></td></tr>
+                    <tr><td>HRMS</td><td><a href="http://hrms.leekie.com" target="_blank">Click here!</a></td></tr>
+                    <tr><td>Suka Gaming Admin Site</td><td><a href="https://sk-admin.cabaster.com/login" target="_blank">Click here!</a></td></tr>
+                    <tr><td>Web Skype</td><td><a href="https://web.skype.com" target="_blank">Click here!</a></td></tr>
+                    <tr><td>Zoho Cliq</td><td><a href="https://www.zoho.com/cliq/login.html" target="_blank">Click here!</a></td></tr>
+                    <tr><td>SBO Agent Site</td><td><a href="https://agent.sbobet.com" target="_blank">Click here!</a></td></tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div id="calculator" class="tab" style="display: none;">
+            <div class="container">
+                <h2>GOCO Calculator</h2>
+                <label for="startTime">Start Time:</label>
+                <input type="datetime-local" id="startTime" required>
+                
+                <label for="endTime">End Time:</label>
+                <input type="datetime-local" id="endTime" required>
+                
+                <button onclick="calculateTimeDifference()">Calculate Difference</button>
+                
+                <div id="result" style="margin-top: 20px;">
+                    <div id="resultHours"></div>
+                    <div id="resultMinutes"></div>
+                    <div id="resultSeconds"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="ipLookup" class="tab" style="display: none;">
+            <div class="container">
+                <h2>IP Lookup</h2>
+                <input type="text" id="ipAddress" placeholder="Enter IP address">
+                <button onclick="lookupIP()">Lookup IP</button>
+                <div id="ipResult" style="margin-top: 20px;"></div>
+                
+            </div>
+        </div>
+        
+    
+        <div id="conversion" class="tab" style="display: none;">
+            <div class="container">
+                <h2>Currency Conversion to SGD</h2>
+                <label for="currency">Currency:</label>
+                <select id="currency" class="styled-select">
+                    <option value="">Select a currency</option>
+                    <option value="AUD">AUD</option>
+                    <option value="BND">BND</option>
+                    <option value="CAD">CAD</option>
+                    <option value="CHF">CHF</option>
+                    <option value="EUR">EUR</option>
+                    <option value="GBP">GBP</option>
+                    <option value="HKD">HKD</option>
+                    <option value="KRW">KRW</option>
+                    <option value="MMK">MMK</option>
+                    <option value="NOK">NOK</option>
+                    <option value="NZD">NZD</option>
+                    <option value="PHP">PHP</option>
+                    <option value="IDR">IDR</option>
+                    <option value="RM">RM</option>
+                    <option value="RMB">RMB</option>
+                    <option value="SGD">SGD</option>
+                    <option value="SEK">SEK</option>
+                    <option value="TB">TB</option>
+                    <option value="TMP">TMP</option>
+                    <option value="USD">USD</option>
+                    <option value="VND">VND</option>
+                    <option value="YEN">YEN</option>
+                    <option value="ZAR">ZAR</option>
+                    <option value="ZWD">ZWD</option>
+                    <option value="INR">INR</option>
+                    <option value="DZD">DZD</option>
+                    <option value="CNY">CNY</option>
+                    <option value="MYR">MYR</option>
+                    <option value="HKD">HKD</option>
+                    <option value="RR">RR</option>
+                    <option value="USDT">USDT</option>
+                    <option value="BRL">BRL</option>
+                </select>
+                <h3><label for="nominal">Amount:</label></h3>
+                <input type="number" id="nominal" placeholder="Enter amount" min="0" class="styled-input">
+
+        <button onclick="convertCurrency()">Convert</button>
+
+        <div id="conversionResult" style="margin-top: 20px;"></div>
+    </div>
+</div>
+        
+                   
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
